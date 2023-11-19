@@ -30,7 +30,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: black;
     font-family: 'Pretendard-Regular';
 }
 ol, ul {
@@ -56,5 +55,5 @@ img {
 
 a {
 	text-decoration: none;
-	color: white;
+	color: #333333;
 }
