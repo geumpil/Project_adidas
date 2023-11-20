@@ -1,0 +1,92 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding: 0 50px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.header-wrap {
+    max-width: 1820px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.main {
+    width: 100%;
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.main-menu-list {
+    padding: 22px 8px;
+}
+
+.main-menu-list > a {
+    padding: 19px 4px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.main-menu-list > a:hover {
+    border-bottom: 3px solid #333;
+}
+
+.main-menu-list:last-child > a:hover {
+    border-bottom: 3px solid #E32B2B;
+}
+
+.main-menu-list:last-child > a {
+    color: #E32B2B;
+}
+
+.sub-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-items {
+    width: 200px;
+    border: 1px solid #EEEEEE;
+    height: 32px;
+    background-color: #F9F9F9;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.search-items:focus {
+    outline: none;
+}
+
+.sub-menu-icon > a {
+    display: block;
+    max-height: 32px;
+}
+
+/* .sub-menu-icon > a > svg > path {
+    stroke : #ffffff;
+} */
+
+.sub-menu-icon:first-child {
+    position: relative;
+}
+
+.sub-menu-icon:first-child > svg {
+    position: absolute;
+    right: 4px;
+}
+
+/* section : main-video */
+
+.video-wrap > a > video {
+    width: 100%;
+}
+
