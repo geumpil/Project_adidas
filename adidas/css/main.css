@@ -8,7 +8,7 @@ header {
 }
 
 .header-wrap {
-    max-width: 1820px;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,6 +124,7 @@ header {
 
 #best-items {
     padding: 220px 32px 0;
+    margin-bottom: 220px;
 }
 
 .content-wrap {
@@ -149,6 +150,18 @@ header {
     color: #999999;
 }
 
+.product-view > a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.product-view > a > span {
+    letter-spacing: 1px;
+}
+
 .items-slide-view {
     width: 1300px;
     overflow: hidden;
@@ -157,10 +170,483 @@ header {
 .items-wrap {
     display: flex;
     width: calc((310px * 6) + (20px * 5));
+    transform: translateX(calc((-310px - 20px) * 0));
+    transition: 1s;
     justify-content: center;
     gap: 20px;
 }
 
 .items-list {
     width: 25%;
+}
+
+.items-image {
+    margin-bottom: 15px;
+}
+
+.items-detail {
+    color: #333333;
+    word-break: keep-all;
+    padding: 5px 0;
+}
+
+.item-cate {
+    display: inline-block;
+    font-size: 16px;
+    color: #888888;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.price, .sale-price {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.sale-price {
+    color: #E32B2B;
+}
+
+.regular-price {
+    font-size: 20px;
+    font-weight: 300;
+    color: #333333;
+    padding-right: 12px;
+}
+
+.label {
+    padding: 3px 8px;
+    background-color: #444444;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+
+/* section : main-banner */
+
+#main-banner {
+    background-color: #F9F9F9;
+    padding: 70px 0;
+}
+
+.main-banner-wrap {
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.main-banner-wrap > img {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+    object-position: top center;
+}
+
+.main-banner-text {
+    text-align: center;
+}
+
+.main-banner-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.main-banner-sub {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.button {
+    color: white;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 10px 34px;
+    display: inline-block;
+}
+
+/* section : winter-special */
+
+#winter-special {
+    padding: 220px 32px 0;
+    margin-bottom: 220px;
+}
+
+/* section : membership */
+
+#membership {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    height: 240px;
+}
+
+.membership-text {
+    color: white;
+    text-align: center;
+}
+
+.membership-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.membership-sub {
+    color: #cccccc;
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+.join-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 160px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #EDE734;
+    margin: 0 auto;
+}
+
+.join-button > span {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* section : adidas-collection */
+
+#adidas-collection {
+    padding: 220px 32px 0;
+    margin-bottom: 220px;
+}
+
+.collection-text {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 100px;
+}
+
+.collection-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.collection-sub {
+    color: #999999;
+}
+
+.collection-series-wrap > a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.collection-series-wrap > a > span {
+    letter-spacing: 1px;
+}
+
+.collection-series {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 90px;
+    column-gap: 50px;
+}
+
+.collection-series-list {
+    width: 400px;
+}
+
+.collection-series-list:first-child {
+    width: 850px;
+}
+
+.collection-series-list > a {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.slide-banner-area {
+    width: 850px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-banner {
+    width: calc(850px * 2);
+    transform: translateX(calc(-850px * 0));
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+
+.slide-banner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.slide-banner-view {
+    height: 532px;
+}
+
+.slide-banner-view > img {
+    width: 100%;
+    height: 532px;
+    object-fit: cover;
+}
+
+.slide-banner-text {
+    color: #333333;
+}
+
+.slide-banner-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.slide-banner-sub {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.slide-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    gap: 26px;
+}
+
+.dot-button {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.dot.act {
+    background-color: #333333;
+}
+
+.move-arrow-wrap {
+    display: flex;
+    gap: 21px;
+    position: relative;
+}
+
+.prev, .next {
+    cursor: pointer;
+}
+
+.prev::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 30px;
+    background-color: #ccc;
+    position: absolute;
+    top: 1px;
+    left: 50%;
+}
+
+.collection-view {
+    height: 532px;
+}
+
+.collection-view > img {
+    width: 100%;
+    height: 532px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.collection-detail {
+    color: #333333;
+}
+
+.detail-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.detail-sub {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+/* section : rivalry */
+
+#rivalry {
+    margin-bottom: 220px;
+}
+
+.rivalry-wrap {
+    position: relative;
+    background-color: #cccccc;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.rivalry-content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rivalry-logo {
+    margin-bottom: 20px;
+}
+
+.rivalry-logo > img {
+    opacity: 0.8;
+}
+
+.rivalry-text {
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 34px;
+}
+
+.rivalry-content > a {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+}
+
+/* section : best-review */
+
+.review-wrap {
+    width: 1300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.review-slide {
+    width: calc((310px * 8 ) + (20px * 7));
+    transform: translateX(calc((-310px - 20px) * 0));
+    transition: 1s;
+    display: flex;
+    gap: 20px;
+}
+
+.review-list {
+    width: 310px;
+
+}
+
+.review-image {
+    width: 310px;
+    height: 310px;
+    
+}
+
+.review-image > img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.review-text {
+    background-color: #F4F5F9;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 26px 7px;
+    color: #333333;
+}
+
+.review-item {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.review-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.review-sub {
+    font-size: 14px;
+    color: #888888;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.review-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    font-size: 14px;
+    color: #888888;
+    font-weight: 300;
+}
+
+.review-prev, .review-next {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.review-prev, .review-next > svg {
+    opacity: 0.8;
+}
+
+.review-prev {
+    left: 0;
+}
+
+.review-next {
+    right: 0;
+}
+
+/* section : adidas-story */
+
+#adidas-story {
+    padding-top: 220px;
 }
