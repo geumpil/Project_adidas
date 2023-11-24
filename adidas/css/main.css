@@ -233,7 +233,7 @@ header {
     padding: 3px 8px;
     background-color: #444444;
     color: white;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 1px;
     border-radius: 5px;
     margin-right: 4px;
@@ -248,16 +248,15 @@ header {
 
 .main-banner-wrap {
     width: 100%;
-    max-height: 600px;
+    /* max-height: 700px; */
     overflow: hidden;
     margin-bottom: 50px;
 }
 
 .main-banner-wrap > img {
     width: 100%;
-    height: 100vh;
-    object-fit: contain;
-    object-position: top center;
+    height: fit-content;
+    object-fit: cover;
 }
 
 .main-banner-text {
@@ -275,11 +274,14 @@ header {
 }
 
 .button {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
     color: white;
     background-color: #333333;
     border-radius: 5px;
-    padding: 10px 34px;
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
 }
 
 /* section : winter-special */
@@ -338,6 +340,20 @@ header {
 #adidas-collection {
     padding: 220px 32px 0;
     margin-bottom: 220px;
+    position: relative;
+}
+
+#adidas-collection::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 80vh;
+    background-color: #f9f9f9;
+    position: absolute;
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    z-index: -1;
 }
 
 .collection-text {
@@ -361,6 +377,7 @@ header {
     align-items: center;
     gap: 3px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .collection-series-wrap > a > span {
@@ -777,13 +794,13 @@ footer {
 }
 
 .footer-menu {
-    padding: 44px 0;
+    padding: 24px 0;
 }
 
 .footer-menu-wrap {
     display: flex;
-      
-    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
     flex-wrap: wrap;
     gap: 60px;
 }
@@ -831,7 +848,7 @@ footer {
 }
 
 .footer-menu-list > input[type=checkbox]:checked~.pd-h {
-    height: 180px;
+    height: 72px;
 }
 
 .footer-menu-list > input[type=checkbox]:checked~.s-h {
@@ -933,6 +950,10 @@ footer {
 
 @media screen and (max-width : 1364px) {
 
+    header {
+        padding: 0 32px;
+    }
+
     .mobile-nav {
         display: flex;
     }
@@ -966,11 +987,47 @@ footer {
     }
     
     .items-wrap {
-        width: calc((50% * 6) + (20px * 5));
+        width: calc((50% * 6) + (10px * 5));
         transform: translateX(calc(((-100% - 20px) / 6) * 0));
     }
     
     .items-list {
+        width: 100%;
+    }
+
+    .main-banner-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .main-banner-sub {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    #winter-special {
+        padding: 200px 32px 0;
+        margin-bottom: 200px;
+    }
+
+    .membership-title {
+        font-size: 24px;
+    }
+
+    #adidas-collection {
+        padding: 200px 32px 0;
+        margin-bottom: 200px;
+    }
+
+    .collection-series-list {
+        width: calc(50% - 25px);   
+    }
+
+    .collection-series-list:first-child {
+        width: 100%;
+    }
+
+    .collection-view > video {
         width: 100%;
     }
     
