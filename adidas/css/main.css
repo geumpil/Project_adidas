@@ -257,6 +257,10 @@ header {
     margin-bottom: 50px;
 }
 
+.mob-m-b {
+    display: none;
+}
+
 .main-banner-wrap > img {
     width: 100%;
     height: fit-content;
@@ -431,6 +435,10 @@ header {
 
 .slide-banner-view {
     height: 532px;
+}
+
+.mob-slide {
+    display: none;
 }
 
 .slide-banner-view > img {
@@ -1352,5 +1360,80 @@ footer {
     
     .label {
         font-size: 14px;
+    }
+
+    #main-banner {
+        padding: 40px 0;
+    }
+
+    .pc-m-b {
+        display: none;
+    }
+
+    .mob-m-b {
+        display: block;
+    }
+
+    .main-banner-title {
+        font-size: 24px;
+    }
+    
+    .main-banner-sub {
+        font-size: 16px;
+        margin:0 auto 40px;
+        text-align: center;
+        line-height: 1.4;
+        width: 80%;
+        word-break: keep-all;
+    }
+
+    #winter-special {
+        padding: 180px 16px 0;
+        margin-bottom: 180px;
+    }
+
+    .membership-text {
+        padding: 0 16px;
+    }
+
+    .membership-title {
+        font-size: 20px;
+    }
+
+    .membership-sub {
+        font-size: 14px;
+    }
+
+    .join-button {
+        gap: 6px;
+        width: 130px;
+        height: 40px;
+    }
+    
+    .join-button > span {
+        font-size: 14px;
+    }
+
+    #adidas-collection {
+        padding: 180px 16px 0;
+        margin-bottom: 180px;
+    }
+    
+    .collection-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .collection-sub {
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+
+    .pc-slide {
+        display: none;
+    }
+
+    .mob-slide {
+        display: block;
     }
 }
