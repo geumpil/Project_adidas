@@ -1209,7 +1209,7 @@ footer {
         box-sizing: border-box;
         flex-direction: column;
         align-items: center;
-        gap: 60px;
+        gap: 40px;
     }
     
     .story-text {
@@ -1223,8 +1223,10 @@ footer {
     
     .story-main {
         font-size: 16px;
-        margin-bottom: 20px;
-        height: 150px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .slide-page-info {
@@ -1435,5 +1437,96 @@ footer {
 
     .mob-slide {
         display: block;
+    }
+
+    .slide-banner-area {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .slide-icon {
+        position: static;
+        gap: 26px;
+    }
+
+    .collection-series {
+        column-gap: 0;
+    }
+
+    .collection-series-list {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    #rivalry {
+        margin-bottom: 180px;
+    }
+
+    .rivalry-logo {
+        width: 260px;
+    }
+
+    #best-review {
+        padding: 0 16px
+    }
+
+    .subject-subtitle {
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+
+    #adidas-story {
+        padding: 180px 16px 0;
+        margin-bottom: 180px;
+    }
+
+    .story-slide-list {
+        padding: 0;
+        gap: 40px;
+    }
+
+    .story-text {
+        gap: 20px;
+    }
+
+    .story-main {
+        font-size: 16px;
+        -webkit-line-clamp: 3;
+    }
+
+    .slide-page-info {
+        width: 100%;
+        justify-content: space-between;
+        position: static;
+        margin-top: 26px;   
+    }
+
+    .footer-menu {
+        padding: 24px 16px;
+    }
+
+    .footer-menu-wrap {
+        column-gap: 20%;
+    }
+    
+    .footer-menu-list {
+        width: 40%;
+    }
+
+    .footer-menu-list > input[type=checkbox]+label span {
+        font-size: 14px;
+    }
+
+    .footer-submenu-list > a {
+        font-size: 14px;
+    }
+
+    .policy {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
     }
 }
