@@ -138,17 +138,19 @@ header {
 }
 
 .hamberger-click {
-    display: none;
     position: absolute;
     top: 0;
-    left:0;
+    left: -100%;
     width: 100%;
     height: 100vh;
     background-color: #ffffff;
+    overflow: hidden;
+
 }
 
 .hamberger-click.nav-active {
-    display: block;
+    left: 0;
+    transition: 0.5s;
 }
 
 .mob-menu {
@@ -224,13 +226,13 @@ button {
     background-color: #ffffff;
     top: 0;
     left: 100%;
-    transition: 0.5s;
-    display: none;
+
 }
 
 .list-submenu-area.sublist-act {
     display: block;
     left: 0;
+    transition: 0.5s;
 }
 
 .list-submenu-top {
