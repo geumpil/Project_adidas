@@ -91,44 +91,66 @@ header {
     right: 4px;
 }
 
-/* section : main-video */
+/* pc-navi */
 
-.video-wrap {
-    position: relative;
-}
-
-.pc-video {
-    display: block;
-}
-
-.mob-video {
+.depth-wrap {
     display: none;
-}
-
-.video-wrap > a > video {
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
-}
-
-.video-text-wrap {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #e9e9e9;
+    top: 60px;
+    left: 0;
+    padding: 40px 0 70px;
 }
 
-.video-text-title {
-    font-size: 60px;
-    margin-bottom: 30px;
+.main-menu-list.hover-active .depth-wrap {
+    display: flex;
+    background-color: white;
 }
 
-.video-text-sub {
-    font-size: 20px;
-    line-height: 1.4;
+.depth-category {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    align-items: flex-start;
+    padding-left: 192px;
+}
+
+.category-title {
+    width: 170px;
+}
+
+.category-title:first-child {
+    width: 210px;
+    border-right: 1px solid #e9e9e9;
+}
+
+.category-title:nth-child(2) {
+    margin-left: 40px;
+}
+
+.category-title > a {
+    display: block;
+    padding-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.depth {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.depth-list > a {
+    font-weight: 300;
+    padding: 5px 0;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
 }
 
 /* mobile-navi */
@@ -271,6 +293,46 @@ button {
     font-size: 18px;
     display: block;
     letter-spacing: 1px;
+}
+
+/* section : main-video */
+
+.video-wrap {
+    position: relative;
+}
+
+.pc-video {
+    display: block;
+}
+
+.mob-video {
+    display: none;
+}
+
+.video-wrap > a > video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-text-wrap {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.video-text-title {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.video-text-sub {
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 /* section : best-items */
