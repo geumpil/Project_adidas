@@ -453,13 +453,13 @@ button {
     justify-content: space-between;
 }
 
-.items-dot-area {
+.items-bar-area {
     width: 70%;
     display: flex;
     align-items: center;
 }
 
-.items-dot {
+.items-bar {
     width: 100%;
     height: 4px;
     background-color: #EEEEEE;
@@ -483,6 +483,26 @@ button {
     width: 1px;
     height: 18px;
     background-color: #ccc;
+}
+
+.total-item {
+    color: #AAAAAA;
+}
+
+.items-page-view {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.items-arrow-wrap {
+    display: flex;
+    gap: 30px;
+}
+
+.items-prev, .items-next {
+    width: 32px;
+    height: 32px;
 }
 
 /* section : main-banner */
