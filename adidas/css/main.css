@@ -248,6 +248,7 @@ button {
     background-color: #ffffff;
     top: 0;
     left: 100%;
+    transition: 0.5s;
 
 }
 
@@ -464,10 +465,12 @@ button {
     height: 4px;
     background-color: #EEEEEE;
     border-radius: 9px;
+    cursor: pointer;
 }
 
 .activate {
     background-color: #333333;
+    transition: 0.8s;
 }
 
 .items-page-number {
@@ -503,6 +506,7 @@ button {
 .items-prev, .items-next {
     width: 32px;
     height: 32px;
+    cursor: pointer;
 }
 
 /* section : main-banner */
