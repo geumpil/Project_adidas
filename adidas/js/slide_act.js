@@ -9,13 +9,34 @@ const currentCount = document.querySelector('.current-item');
 
 const realSlideCount = slideImg.length;
 let viewCount = 4;
-let slideImgSize = '310px';
+let slideImgSize = '-310px';
 let gapSize = '20px';
 let index = 0;
-let loopInterval;
+// let loopInterval;
 
+function resizeView() {
 
-for(let i = 0; i < realSlideCount; i++) {
+    window.addEventListener('resize', ()=>{
+
+        if(window.innerWidth < 1364) {
+            slideImgSize = '(-100% + 20px * 5) / 6';
+            gapSize = '20px';
+            viewCount = 2;
+        }else {
+            viewCount = 4;
+        }
+        setCurrentSlideCount();
+        setSlideMaxCount();
+        slideApply(false);
+    })
+}
+
+resizeView();
+
+console.log(viewCount);
+
+for(let i = 0; i < slideWrap.childElementCount-viewCount+1; i++) {
+    console.log(slideWrap.childElementCount-viewCount+1);
     const barBtn = document.createElement('div');
     barBtn.classList.add('items-bar');
 
@@ -29,7 +50,7 @@ for(let i = 0; i < realSlideCount; i++) {
 slideApply(false);
 
 function slideApply(animation) {
-    slideWrap.style.transform = `translateX(calc((-${slideImgSize} - ${gapSize}) * ${index}))`
+    console.log(slideWrap.style.transform = `translateX(calc((${slideImgSize} - ${gapSize}) * ${index}))`);
     buttonUpdate();
 }
 
@@ -39,6 +60,19 @@ function buttonUpdate() {
         slideBar.children[index].classList.add('activate');
     }
 }
+
+
+setSlideMaxCount();
+
+function setCurrentSlideCount() {
+    currentCount.innerText = `${String(index + 1).padStart(2,'0')}`;
+}
+function setSlideMaxCount() {
+    maxCount.innerText = `${String(slideWrap.childElementCount-viewCount+1).padStart(2,'0')}`
+}
+
+
+
 
 
 let moveAble = true;
@@ -79,26 +113,3 @@ function next() {
 }
 
 
-setSlideMaxCount();
-
-function setCurrentSlideCount() {
-    console.log(currentCount.innerText = `${String(index + 1).padStart(2,'0')}`);
-}
-function setSlideMaxCount() {
-    maxCount.innerText = `${String(slideWrap.childElementCount-viewCount+1).padStart(2,'0')}`
-}
-
-window.addEventListener('resize', ()=>{
-
-    if(window.innerWidth < 744) {
-        slideImgSize = '100vw';
-        viewCount = 2;
-    }else if(window.innerWidth < 1364) {
-        slideImgSize = '100vw';
-        viewCount = 3
-    }else {
-        viewCount = 4;
-    }
-    setCurrentSlideCount();
-    setSlideMaxCount();
-})
