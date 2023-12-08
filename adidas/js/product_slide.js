@@ -17,7 +17,6 @@ function makeSlider(slider) {
     const maxCount = slider.querySelector('.total-item');
     const currentCount = slider.querySelector('.current-item');
 
-    const realSlideCount = slideImg.length;
     const buttonList = [];
     let maxIndex = 0
     let viewCount = 4;
