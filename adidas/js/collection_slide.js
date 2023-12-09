@@ -10,7 +10,7 @@ let index = 0;
 let slideImgWidth = '-850px';
 let colMoveAble = true;
 
-// makeClone();
+makeClone();
 colMakeBtn();
 colSlideApply(false);
 
@@ -60,7 +60,7 @@ function colNext() {
 // 슬라이드 버튼 생성
 
 function colMakeBtn(){
-    for(let i = 0; i < collectionSlideWrap.childElementCount; i++) {
+    for(let i = 0; i < colRealSlideCount; i++) {
         const dotBtn = document.createElement('div');
         dotBtn.classList.add('dot');
         dotBtn.addEventListener('click', ()=> {
