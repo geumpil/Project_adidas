@@ -695,16 +695,17 @@ button {
 }
 
 .slide-banner {
-    width: calc(850px * 2);
+    width: fit-content;
     transform: translateX(calc(-850px * 0));
     display: flex;
-    justify-content: center;
     transition: 0.7s;
 }
 
 .slide-banner-list {
+    width: 850px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     gap: 32px;
 }
 
@@ -1352,11 +1353,12 @@ footer {
     }
     
     .slide-banner {
-        width: calc(100% * 2);
+        width: fit-content;
         transform: translateX(calc(-50% * 0));
     }
     
     .slide-banner-list {
+        width: calc(100vw - 64px);
         gap: 24px;
     }
     
@@ -1866,5 +1868,12 @@ footer {
         align-items: center;
         gap: 14px;
         margin-bottom: 20px;
+    }
+
+
+
+
+    .slide-banner-list {
+        width: calc(100vw - 32px);
     }
 }

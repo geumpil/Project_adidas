@@ -6,20 +6,47 @@ const collectionNext = document.querySelector('.next');
 const dotButtonArea = document.querySelector('.dot-button');
 
 const colRealSlideCount = collectionSlideImg.length;
-let index = 0;
-let slideImgWidth = '-850px';
+const slideSpeed = 500;
+let index = 1;
+let slideImgWidth;
 let colMoveAble = true;
+let loopInterval;
 
+
+colInit();
 makeClone();
 colMakeBtn();
 colSlideApply(false);
+
+// 리사이징
+
+function colInit() {
+    slideImgWidth = 850;
+    if(window.innerWidth < 744) {
+        slideImgWidth = window.innerWidth - 16 * 2;
+    } else if(window.innerWidth < 1364) {
+        slideImgWidth = window.innerWidth - 32 * 2;
+    }
+
+}
+
+window.addEventListener('resize', ()=>{
+    colInit();
+    colSlideApply(false);
+})
 
 
 // 슬라이드 이동
 
 function colSlideApply(animation) {
-    collectionSlideWrap.style.transform = `translateX(calc(${slideImgWidth} * ${index}))`;
+    if(animation){
+        collectionSlideWrap.style.transition = `${slideSpeed}ms`;
+    }else {
+        collectionSlideWrap.style.transition = '0ms';
+    }
+    collectionSlideWrap.style.transform = `translateX(-${slideImgWidth*index}px)`;
     colButtonUpdate();
+    resetInterval();
 }
 
 // 버튼 클릭 이동
@@ -31,14 +58,15 @@ function colPrev() {
     if(colMoveAble) {
         colMoveAble = false;
         index--;
-        if(index < 0) {
-            index = 0;
-        }
         colSlideApply(true);
 
         setTimeout(() => {
+            if(index < 1) {
+                index = colRealSlideCount;
+                colSlideApply(false);
+            }
             colMoveAble = true;
-        }, 500);
+        }, slideSpeed);
     }
 }
 
@@ -46,14 +74,15 @@ function colNext() {
     if(colMoveAble){
         colMoveAble = false; 
         index++;
-        if(index > collectionSlideWrap.childElementCount){
-            index = collectionSlideWrap.childElementCount
-        }
         colSlideApply(true);
 
         setTimeout(() => {
+            if(index > colRealSlideCount){
+                index = 1
+                colSlideApply(false);
+            }
             colMoveAble = true;
-        }, 500);
+        }, slideSpeed);
     }
 }
 
@@ -76,7 +105,16 @@ function colMakeBtn(){
 function colButtonUpdate() {
     for(let i = 0; i < dotButtonArea.childElementCount; i++) {
         dotButtonArea.children[i].classList.remove('act');
-        dotButtonArea.children[index].classList.add('act');
+    }
+
+    if(index < 1) {
+        dotButtonArea.lastElementChild.classList.add('act');
+    } else if(index > colRealSlideCount) {
+        dotButtonArea.firstElementChild.classList.add('act');
+    } else {
+       
+        dotButtonArea.children[index - 1].classList.add('act');
+        
     }
 }
 
@@ -95,4 +133,14 @@ function makeClone() {
         collectionSlideWrap.insertBefore(behindCopy[i],collectionSlideWrap.firstChild);
         collectionSlideWrap.appendChild(frontCopy[i]);
     }
+}
+
+// 자동 슬라이드
+
+function resetInterval(){
+    clearInterval(loopInterval);
+
+    loopInterval = setInterval(() => {
+        colNext();
+    }, 4000);
 }
