@@ -986,9 +986,10 @@ button {
 }
 
 .story-slide {
+    width: fit-content;
     display: flex;
     transform: translateX(calc(-1300px * 0));
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .story-image {

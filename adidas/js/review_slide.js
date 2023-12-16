@@ -15,6 +15,8 @@ let reviewLoopInterval;
 reInit();
 reMakeClone();
 reSlideApply(false);
+reviewResize();
+
 
 // 리사이징
 
@@ -23,7 +25,7 @@ function reInit() {
         reViewCount = 2; 
     } else if(window.innerWidth < 1364) {
         reViewCount = 3;
-        // reSlideImgSize = window.innerWidth;
+        reSlideImgSize = '(-100% + 20px * 7) / 8';
         //100vh = window.innerHeight
         //100vw = window.innerWidth
         
@@ -32,11 +34,12 @@ function reInit() {
         reSlideImgSize = '-310px';
         reGapSize = '20px';
     }
+    reSlideApply(false);
 }
 
-window.addEventListener('resize', () => {
-
-})
+function reviewResize() {
+    window.addEventListener('resize', reInit);
+}
 
 // 슬라이드 이동
 
