@@ -986,23 +986,30 @@ button {
 }
 
 .story-slide {
-    width: fit-content;
-    display: flex;
-    transform: translateX(calc(-1300px * 0));
-    transition: 0.5s;
+    width: 100%;
+    position: relative;
+    /* height: 602px; */
 }
 
 .story-image {
     width: 500px;
-    height: 602px;
     flex-shrink: 0;
 }
 
 .story-slide-list {
+    position: absolute;
+    top: 0;
     width: 1300px;
+    left: 0;
     flex-shrink: 0;
     display: flex;
     gap: 140px;
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+.story-slide-list.active {
+    opacity: 1;
 }
 
 .story-text {
@@ -1060,6 +1067,34 @@ button {
     width: 100px;
     height: 2px;
     background-color: #D9D9D9;
+}
+
+.progress-bar .bar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #E32B2B;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+
+}
+
+.progress-bar .bar.active {
+    animation-name: progress;
+}
+
+
+@keyframes progress {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+    
 }
 
 .story-arrow {
@@ -1493,16 +1528,16 @@ footer {
     
     .story-slide {
         width: 100%;
-        transform: translateX(calc(-100% * 0));
     }
     
     .story-image {
         width: 100%;
-        height: fit-content;
+        height: auto;
     }
     
     .story-slide-list {
         width: 100%;
+        height: auto;
         padding: 0 15%;
         box-sizing: border-box;
         flex-direction: column;
