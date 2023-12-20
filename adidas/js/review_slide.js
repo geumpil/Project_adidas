@@ -1,4 +1,5 @@
-function reviewSlide(){
+function reviewSlide() {
+
     const reSlideWrap = document.querySelector('.review-slide');
     const reSlideImg = document.querySelectorAll('.review-list');
     const rePrev = document.querySelector('.review-prev');
@@ -9,7 +10,7 @@ function reviewSlide(){
     let reViewCount;
     let reSlideImgSize;
     let reGapSize;
-    let reIndex = 4;
+    let index = 4;
     let moveActivate = true;
     let reviewLoopInterval;
 
@@ -26,7 +27,7 @@ function reviewSlide(){
             reViewCount = 2; 
         } else if(window.innerWidth < 1364) {
             reViewCount = 3;
-            reSlideImgSize = (-window.innerWidth + 20 * (슬라이드갯수-1)) / 슬라이드갯수;
+            reSlideImgSize = (window.innerWidth - (20 * (reRealSlideCount - 1))) / reRealSlideCount;
             //100vh = window.innerHeight
             //100vw = window.innerWidth
             
@@ -50,7 +51,7 @@ function reviewSlide(){
         } else {
             reSlideWrap.style.transition = '0ms';
         }
-        reSlideWrap.style.transform = `translateX(-${(reSlideImgSize + reGapSize) * reIndex}px`;
+        reSlideWrap.style.transform = `translateX(-${(reSlideImgSize + reGapSize) * index}px`;
         reviewResetInterval();
     }
 
@@ -62,12 +63,12 @@ function reviewSlide(){
     function rePrevMove() {
         if(moveActivate) {
             moveActivate = false;
-            reIndex--;
+            index--;
             reSlideApply(true);
 
             setTimeout(() => {
-                if(reIndex < reViewCount) {
-                    reIndex = reRealSlideCount - 1 + reViewCount;
+                if(index < reViewCount) {
+                    index = reRealSlideCount - 1 + reViewCount;
                     reSlideApply(false);
                 }
                 moveActivate = true;
@@ -78,12 +79,12 @@ function reviewSlide(){
     function reNextMove() {
         if(moveActivate) {
             moveActivate = false;
-            reIndex++;
+            index++;
             reSlideApply(true);
 
             setTimeout(() => {
-                if(reIndex > reRealSlideCount - 1 + reViewCount) {
-                    reIndex = reViewCount;
+                if(index > reRealSlideCount - 1 + reViewCount) {
+                    index = reViewCount;
                     reSlideApply(false);
                 }
                 moveActivate = true;
@@ -113,18 +114,17 @@ function reviewSlide(){
     function reviewResetInterval(){
         reviewStopInterval();
         reviewStartInterval();
-
     }
 
     function  reviewStopInterval() {
         clearInterval(reviewLoopInterval);
     }
+
     function  reviewStartInterval() {
         reviewLoopInterval = setInterval(() => {
             reNextMove()
         }, 2000);
     }
-
 
     reSlideView.addEventListener('mouseenter',()=>{
         reviewStopInterval();
@@ -133,8 +133,8 @@ function reviewSlide(){
     reSlideView.addEventListener('mouseleave',()=>{
         reviewStartInterval();
     })
+
 }
 
 
 
-reviewSlide();

@@ -9,7 +9,7 @@ function storySlide() {
     const storyTotalPage = document.querySelector('.total-page');
     const progressBar = document.querySelector('.bar')
     const storySlideSpeed = 500;
-    const intervalSpeed = 10000;
+    const intervalSpeed = 8000;
     const intervalGap = 200;
     
     let index = 0;
@@ -118,7 +118,8 @@ function storySlide() {
             storyNextButton();
         }, intervalSpeed);
     }  
+    
 }
 
-storySlide();
+
 
