@@ -882,7 +882,7 @@ button {
 }
 
 .review-slide {
-    width: calc((310px * 8 ) + (20px * 7));
+    width: fit-content;
     transform: translateX(calc((-310px - 20px) * 0));
     transition: 1s;
     display: flex;
@@ -890,8 +890,7 @@ button {
 }
 
 .review-list {
-    width: 310px;
-
+    flex-shrink: 0;
 }
 
 .review-image {
@@ -1468,7 +1467,7 @@ footer {
     }
     
     .review-slide {
-        width: calc(((100% - (20px * 2)) / 3 ) * 8 + 20px * 7);
+        width: fit-content;
         transform: translateX(calc(((-100% + 20px * 7) / 8 - 20px) * 0));
         gap: 20px;
     }
@@ -1829,7 +1828,7 @@ footer {
     }
 
     .review-slide {
-        width: calc(((100% - 10px) / 2 ) * 8 + 10px * 7);
+        width: fit-content;
         transform: translateX(calc(((-100% + 10px * 7) / 8 - 10px) * 0));
         gap: 10px;
     }

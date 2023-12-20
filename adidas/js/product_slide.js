@@ -85,7 +85,7 @@ function makeSlider(slider) {
     // 슬라이드 이동
 
     function slideApply(animation) {
-        console.log(slideWrap.style.transform = `translateX(calc((${slideImgSize} - ${gapSize}) * ${index}))`);
+        slideWrap.style.transform = `translateX(calc((${slideImgSize} - ${gapSize}) * ${index}))`;
         setCurrentSlideCount();
         buttonUpdate();
     }
