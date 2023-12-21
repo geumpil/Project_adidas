@@ -20,10 +20,11 @@ function makeSlider(slider) {
     const buttonList = [];
     let maxIndex = 0
     let viewCount = 4;
-    let slideImgSize = '-310px';
-    let gapSize = '20px';
+    let slideImgSize;
+    let gapSize = 20;
     let index = 0;
     let moveAble = true;
+    let viewGapCount;
     // let loopInterval;
 
 
@@ -36,14 +37,16 @@ function makeSlider(slider) {
 
     function init() {
         if(window.innerWidth < 1364) {
-            slideImgSize = '(-100% + 20px * 5) / 6';
-            gapSize = '20px';
+            gapSize = 20;
             viewCount = 2;
         }else {
             viewCount = 4;
         }
-        if(index>maxIndex) 
-            index=maxIndex;
+        if(index > maxIndex) {
+            index = maxIndex;
+        }
+        viewGapCount = viewCount - 1; 
+        slideImgSize = (slideView.getBoundingClientRect().width - viewGapCount * gapSize) / viewCount; 
         setCurrentSlideCount();
         setSlideMaxCount();
         delBtn()
@@ -85,7 +88,7 @@ function makeSlider(slider) {
     // 슬라이드 이동
 
     function slideApply(animation) {
-        slideWrap.style.transform = `translateX(calc((${slideImgSize} - ${gapSize}) * ${index}))`;
+        slideWrap.style.transform = `translateX(${-(slideImgSize + gapSize) * index}px`;
         setCurrentSlideCount();
         buttonUpdate();
     }

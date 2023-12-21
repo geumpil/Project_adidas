@@ -30,11 +30,10 @@ function reviewSlide() {
 
     // 리사이징
     function setSlideContentsWidth(width) {
-        for(let i = 0; i < reSlideWrap.childElementCount ; i ++){
+        for(let i = 0; i < reSlideWrap.childElementCount ; i++){
             reSlideWrap.children[i].style.width =`${width}px`
             console.log(reSlideImg[i])
         }
-
     }
 
     function reInit() {
@@ -50,8 +49,6 @@ function reviewSlide() {
             reGapSize = 20
             reViewCount = 4;
         }
-        
-        console.log(`이잉? : ${reSlideView.getBoundingClientRect().width}`)
         viewGapCount = reViewCount - 1;
         reSlideImgSize = (reSlideView.getBoundingClientRect().width - viewGapCount * reGapSize) / reViewCount;
         setSlideContentsWidth(reSlideImgSize);

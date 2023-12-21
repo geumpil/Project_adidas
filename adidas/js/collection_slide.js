@@ -114,9 +114,7 @@ function collectionSlide() {
         } else if(index > colRealSlideCount) {
             dotButtonArea.firstElementChild.classList.add('act');
         } else {
-           
             dotButtonArea.children[index - 1].classList.add('act');
-            
         }
     }
     
