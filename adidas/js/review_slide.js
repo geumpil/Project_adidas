@@ -68,7 +68,7 @@ function reviewSlide() {
             reSlideWrap.style.transition = '0ms';
         }
         reSlideWrap.style.transform = `translateX(${-(reSlideImgSize + reGapSize) * index}px`;
-        reviewResetInterval();
+        
     }
 
     // 버튼(클릭) 이동
@@ -89,6 +89,7 @@ function reviewSlide() {
                 }
                 moveActivate = true;
             }, reSlideSpeed);
+            reviewResetInterval();
         }
     }
 
@@ -105,6 +106,7 @@ function reviewSlide() {
                 }
                 moveActivate = true;
             }, reSlideSpeed);
+            reviewResetInterval();
         }
     }
 
@@ -142,12 +144,13 @@ function reviewSlide() {
         }, 2000);
     }
 
-    reSlideView.addEventListener('mouseenter',()=>{
+    reSlideView.addEventListener('mouseenter',() => {
         reviewStopInterval();
+
     })
 
-    reSlideView.addEventListener('mouseleave',()=>{
-        reviewStartInterval();
+    reSlideView.addEventListener('mouseleave',() => {        
+        reviewResetInterval();
     })
 
 }

@@ -26,6 +26,7 @@ function storySlide() {
     // 리사이징
     
     function storyInit() {
+        let slideImageWidth;
         if(window.innerWidth < 744) {
             slideImageWidth = window.innerWidth - 16 * 2;
         } else if(window.innerWidth < 1364) {
