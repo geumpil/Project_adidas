@@ -1662,6 +1662,14 @@ footer {
         padding: 0 16px;
     }
 
+    .header-wrap {
+        gap: 0;
+    }
+
+    .sub-menu {
+        gap: 8px;
+    }
+
     .video-wrap {
         height: 100%;
         overflow: hidden;
