@@ -49,7 +49,7 @@ function makeSlider(slider) {
         slideImgSize = (slideView.getBoundingClientRect().width - viewGapCount * gapSize) / viewCount; 
         setCurrentSlideCount();
         setSlideMaxCount();
-        delBtn()
+        delBtn();
         makeBtn();
         slideApply(false);
     }

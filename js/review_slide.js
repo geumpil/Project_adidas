@@ -39,7 +39,7 @@ function reviewSlide() {
     function reInit() {
         if(window.innerWidth < 744) {
             reViewCount = 2; 
-            reGapSize = 10
+            reGapSize = 10;
             
         } else if(window.innerWidth < 1364) {
             reViewCount = 3;
