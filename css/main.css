@@ -1875,6 +1875,7 @@ footer {
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
     
     .review-title {
         font-size: 16px;
@@ -1893,13 +1894,6 @@ footer {
     .star-score {
         display: flex;
         gap: 3px;
-    }
-
-    .date {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     .star-score > svg {
