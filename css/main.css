@@ -1870,6 +1870,10 @@ footer {
 
     .review-item {
         font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     
     .review-title {
@@ -1884,6 +1888,23 @@ footer {
     .subject-subtitle {
         line-height: 1.6;
         word-break: keep-all;
+    }
+
+    .star-score {
+        display: flex;
+        gap: 3px;
+    }
+
+    .date {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .star-score > svg {
+        width: 11px;
+        height: 11px;
     }
 
     #adidas-story {
